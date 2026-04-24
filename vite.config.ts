@@ -15,5 +15,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/nome-do-seu-repositorio/', // <--- Adicione esta linha
+  base: '/clinica-uemura/', // <--- Adicione esta linha
 })
