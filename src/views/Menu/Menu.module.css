@@ -88,6 +88,7 @@ header {
     display: none;
     justify-content: space-around;
     align-items: center;
+    padding-bottom: 10px;
 }
 
 .menuLinks.mobile {
@@ -116,8 +117,9 @@ header {
     width: 100vw;
 }
 
-.menuLinks button {
-    margin: 10px 0;
+.menuLinks a:last-child {
+    width: fit-content;
+    padding: 10px 20px;
 }
 
 @media(min-width: 800px) {
@@ -132,6 +134,7 @@ header {
   
     .menuLinks {
       display: flex;
+      padding-bottom: 0;
     }
 
     .menuLinks a {
@@ -139,19 +142,14 @@ header {
         width: auto;
     }
 
+    .menuLinks > div > a {
+        padding: 10px 30px;
+    }
+
     .menuLinks a:hover {
         background-color: var(--primary-color);
         color: var(--text-color-light);
         transition: 0.3s;
-    }
-
-    .menuLinks button {
-        margin: 0 30px;
-    }
-
-    .btnHeader {
-        display: block;
-        margin-left: auto;
     }
   
     .menuLinks.mobile {

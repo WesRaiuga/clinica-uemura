@@ -3,6 +3,8 @@ import HomeLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
 import LogoContainer from "../../components/Logo/LogoContainer";
 
+import { WHATSAPP_LINK } from "../../utils/constants";
+
 const Footer = () => {
   return (
     <footer>
@@ -16,7 +18,7 @@ const Footer = () => {
         <HomeLinks className={style.homeLinks} />
 
         <div className={style.socialIcons}>
-          <Link to="https://wa.me/5511987428888?text=Oi,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" title="Whatsapp">
+          <Link to={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" title="Whatsapp">
             <i className="fa-brands fa-whatsapp"></i>
             <span className={style.socialText}>
               (11) 98742-8888

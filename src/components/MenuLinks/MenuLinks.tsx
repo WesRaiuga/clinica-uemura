@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import Button from "../Button/Button";
+import LinkButton from "../LinkButton/LinkButton";
+import { WHATSAPP_LINK } from "../../utils/constants";
 
 interface MenuLinksProps {
   className?: string;
@@ -24,7 +25,11 @@ const MenuLinks = ({ className }: MenuLinksProps) => {
         Dúvidas
       </Link>
 
-      <Button>Agendar Consulta</Button>
+      <div>
+        <LinkButton href={WHATSAPP_LINK}>
+          Agendar Consulta
+        </LinkButton>
+      </div>
     </nav>
   );
 };
