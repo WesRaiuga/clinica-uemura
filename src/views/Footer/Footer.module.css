@@ -70,7 +70,7 @@ footer a{
     flex-wrap: wrap;
     font-size: 1em;
     gap: 5px;
-    max-height: 100px;
+    max-width: 200px;
 }
 
 .rightsInfo {
@@ -109,7 +109,7 @@ footer a{
     }
 
     .homeLinks {
-        min-width: 160px;
+        min-width: 180px;
         flex-wrap: nowrap;
     }
 

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import style from "./Menu.module.css";
 import logotipo from "../../assets/img/logo.png";
-import HomeLinks from "../../components/MenuLinks/MenuLinks";
+import MenuLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
 
 const Menu: React.FC = () => {
@@ -27,10 +27,11 @@ const Menu: React.FC = () => {
           <span className={`${style.traco} ${style.traco3}`}></span>
         </div>
 
-        <HomeLinks className={style.filtros} />
+        <MenuLinks className={style.menuLinks} />
+
       </header>
 
-      <HomeLinks className={`${style.filtros} ${style.mobile} ${menuAtivo ? style.ativo : ""}`} />
+      <MenuLinks className={`${style.menuLinks} ${style.mobile} ${menuAtivo ? style.ativo : ""}`} />
     </div>
   );
 };

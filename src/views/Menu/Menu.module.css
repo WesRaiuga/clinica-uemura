@@ -84,13 +84,13 @@ header {
     transform: rotateZ(45deg);
 }
 
-.filtros {
+.menuLinks {
     display: none;
     justify-content: space-around;
     align-items: center;
 }
 
-.filtros.mobile {
+.menuLinks.mobile {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -104,44 +104,63 @@ header {
     background-color: var(--mobile-menu-bg-color);
 }
 
-.filtros.mobile.ativo {
+.menuLinks.mobile.ativo {
     transform: translateY(0);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.21);
 }
 
-.filtros a {
+.menuLinks a {
     cursor: pointer;
     padding: 10px 0;
     text-align: center;
     width: 100vw;
 }
 
+.menuLinks button {
+    margin: 10px 0;
+}
+
 @media(min-width: 800px) {
     header {
       justify-content: space-between;
-      padding: 0 0 0 20px;
+      padding: 0 30px;
     }
   
     .menuHamburguer {
       display: none;
     }
   
-    .filtros {
+    .menuLinks {
       display: flex;
     }
 
-    .filtros a {
+    .menuLinks a {
         padding: 25px 30px;
         width: auto;
     }
 
-    .filtros a:hover {
+    .menuLinks a:hover {
         background-color: var(--primary-color);
         color: var(--text-color-light);
         transition: 0.3s;
     }
+
+    .menuLinks button {
+        margin: 0 30px;
+    }
+
+    .btnHeader {
+        display: block;
+        margin-left: auto;
+    }
   
-    .filtros.mobile {
+    .menuLinks.mobile {
       display: none;
+    }
+}
+
+@media(min-width: 1300px) {
+    header {
+      padding: 0 100px;
     }
 }
