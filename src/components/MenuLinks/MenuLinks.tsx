@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 interface MenuLinksProps {
   className?: string;
@@ -7,25 +8,23 @@ interface MenuLinksProps {
 const MenuLinks = ({ className }: MenuLinksProps) => {
   return (
     <nav className={`${className ? " " + className : ""}`}>
-      <Link to="/" state={{ scrollTo: "symptoms" }}>
+      <Link to="/" state={{ scrollTo: "about-us" }}>
         Sobre Nós
       </Link>
 
-      <Link to="/" state={{ scrollTo: "how-it-works" }}>
-        Especialidades
+      <Link to="/" state={{ scrollTo: "services" }}>
+        Serviços
       </Link>
 
-      <Link to="/" state={{ scrollTo: "about-me" }}>
+      <Link to="/" state={{ scrollTo: "contact" }}>
         Contato
       </Link>
 
-      <Link to="/" state={{ scrollTo: "services" }}>
-        FAQ
+      <Link to="/" state={{ scrollTo: "questions" }}>
+        Dúvidas
       </Link>
 
-      <Link to="/" state={{ scrollTo: "faq" }}>
-        Agendar Consulta
-      </Link>
+      <Button >Agendar Consulta</Button>
     </nav>
   );
 };
