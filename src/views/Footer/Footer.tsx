@@ -1,7 +1,7 @@
 import style from "./Footer.module.css";
-import logotipo from "../../assets/img/logo.png";
 import HomeLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
+import LogoContainer from "../../components/Logo/LogoContainer";
 
 const Footer = () => {
   return (
@@ -9,11 +9,7 @@ const Footer = () => {
       <div className={style.firstRow}>
         <div className={style.logo}>
           <Link to="/" state={{ scrollTo: "banner" }}>
-            <img src={logotipo} alt="logotipo da psicóloga, escrito Dayana Mendes Psicóloga CRP: 06/177353" />
-            <div>
-              <p>CLÍNICA</p>
-              <p>UEMURA</p>
-            </div>
+            <LogoContainer />
           </Link>
         </div>
 

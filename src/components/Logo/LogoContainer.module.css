@@ -1,0 +1,12 @@
+.logoContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.logoContainer img {
+    max-width: 70px;
+}
