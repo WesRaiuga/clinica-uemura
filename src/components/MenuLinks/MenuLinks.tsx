@@ -24,7 +24,7 @@ const MenuLinks = ({ className }: MenuLinksProps) => {
         Dúvidas
       </Link>
 
-      <Button >Agendar Consulta</Button>
+      <Button>Agendar Consulta</Button>
     </nav>
   );
 };

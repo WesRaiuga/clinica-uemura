@@ -1,6 +1,6 @@
 import React from 'react';
-// import logo from '../../assets/img/logos/logotipo-principal-1.png';
 import style from './Loader.module.css';
+import LogoContainer from "../Logo/LogoContainer";
 
 const Loader: React.FC<{ loading: boolean }> = ({loading}) => {
   return (
@@ -11,10 +11,7 @@ const Loader: React.FC<{ loading: boolean }> = ({loading}) => {
       }}
       className={style.loaderContainer}
     >
-      <p>UEMURA</p>
-      {/* <img 
-        className={style.loaderImage}
-        src={logo} alt="logotipo da psicóloga Dayana Mendes" /> */}
+      <LogoContainer />
     </div>
   )
 }

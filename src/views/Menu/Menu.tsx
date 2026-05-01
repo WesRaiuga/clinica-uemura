@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import style from "./Menu.module.css";
-import logotipo from "../../assets/img/logo.png";
 import MenuLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
+import LogoContainer from "../../components/Logo/LogoContainer";
 
 const Menu: React.FC = () => {
   const [menuAtivo, setMenuAtivo] = useState(false);
@@ -13,11 +13,7 @@ const Menu: React.FC = () => {
       <header>
         <div className={style.titulo}>
           <Link to="/" state={{ scrollTo: "banner" }}>
-            <img src={logotipo} alt="logotipo da clínica" />
-            <div>
-              <p>Clínica</p>
-              <p>Uemura</p>
-            </div>
+            <LogoContainer />
           </Link>
         </div>
 
