@@ -1,15 +1,24 @@
 :root {
-  --background-color: #f4f6f8;
-  --button-color: #8772cf;
-  --button-hover-color: #f4f6f8;
-  --footer-bg-color: #8772cf;
-  --image-border-color: #8772cf;
-  --hero-bg-color: #dee8fe;
-  --highlight-section: #dee8fe ;
-  --menu-bg-color: #f4f6f8;
-  --mobile-menu-bg-color: #f4f6f8;
-  --primary-color: #8772cf;
-  --text-color: #515254;
-  --text-color-light: #f4f6f8;
-  --title-color: #38748c;
+  /* Brand Colors */
+  --primary-color: #bc002d;
+  --secondary-color: #f8f9fa; 
+  
+  /* Backgrounds */
+  --background-color: #ffffff; 
+  --secondary-bg-color: #f8f9fa;
+  --hero-bg-color: #ffffff;
+  --menu-bg-color: #ffffff;
+  --mobile-menu-bg-color: #ffffff;
+  --footer-bg-color: #4e4e4e;
+  --highlight-section: #fdf5f6;
+
+  /* Text Colors */
+  --text-color: #4a4a4a;
+  --text-color-light: #ffffff;
+  --title-color: #1a1a1a;
+
+  /* UI Elements */
+  --button-color: var(--primary-color);
+  --button-hover-color: #990024;
+  --image-border-color: var(--primary-color);
 }

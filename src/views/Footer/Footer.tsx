@@ -1,5 +1,5 @@
 import style from "./Footer.module.css";
-// import logotipo from "../../assets/img/logos/logotipo-para-fundo-preto.png";
+import logotipo from "../../assets/img/logo.png";
 import HomeLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
 
@@ -9,14 +9,15 @@ const Footer = () => {
       <div className={style.firstRow}>
         <div className={style.logo}>
           <Link to="/" state={{ scrollTo: "banner" }}>
-          <p>UEMURA</p>
-            {/* <img src={logotipo} alt="logotipo da psicóloga, escrito Dayana Mendes Psicóloga CRP: 06/177353" /> */}
+            <img src={logotipo} alt="logotipo da psicóloga, escrito Dayana Mendes Psicóloga CRP: 06/177353" />
+            <div>
+              <p>CLÍNICA</p>
+              <p>UEMURA</p>
+            </div>
           </Link>
         </div>
 
-        <div>
-          <HomeLinks className={style.homeLinks} />
-        </div>
+        <HomeLinks className={style.homeLinks} />
 
         <div className={style.socialIcons}>
           <Link to="https://wa.me/5511987428888?text=Oi,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20consulta" target="_blank" rel="noopener noreferrer" title="Whatsapp">
@@ -43,7 +44,7 @@ const Footer = () => {
       <div>
         <hr />
 
-        <div className={style.psiInfo}>
+        <div className={style.rightsInfo}>
           <p>Clínica Uemura</p>
           <p>© 2026. Todos os direitos reservados.</p>
         </div>

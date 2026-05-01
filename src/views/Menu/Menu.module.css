@@ -32,8 +32,21 @@ header {
     padding: 10px;
 }
 
+.titulo a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
 .titulo img {
     max-height: 50px;
+}
+
+.titulo p {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
 }
 
 .menuHamburguer {
