@@ -1,5 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 
+import UnderlinedTitle from '@/components/UnderlinedTitle/UnderlinedTitle';
+
 import { FAQ_DATA } from './FaqData.tsx';
 import style from './FaqSection.module.css';
 
@@ -53,9 +55,7 @@ const FaqSection = () => {
 
   return (
     <section id="faq" className={style.faqSection}>
-      <div className={style.sectionTitle}>
-        <h2>Dúvidas Frequentes</h2>
-      </div>
+      <UnderlinedTitle>Dúvidas Frequentes</UnderlinedTitle>
       <div className={style.sectionContent}>
         {FAQ_DATA.map((item, idx) => (
           <FaqItem 

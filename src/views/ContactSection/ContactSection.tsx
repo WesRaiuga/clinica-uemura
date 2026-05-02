@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
+import UnderlinedTitle from '@/components/UnderlinedTitle/UnderlinedTitle';
 import { WHATSAPP_LINK } from '@/utils/constants';
 
 import style from './ContactSection.module.css';
@@ -33,7 +34,7 @@ const ContactSection = () => {
     <section id="contact" className={style.contactSection}>
       <div className={style.container}>
         <div className={style.content}>
-          <h2 className={style.title}>Entre em Contato</h2>
+          <UnderlinedTitle align="left">Entre em Contato</UnderlinedTitle>
           <p className={style.description}>
             Estamos à disposição para tirar suas dúvidas, ouvir sugestões e agendar sua consulta. 
             Escolha o canal de sua preferência.

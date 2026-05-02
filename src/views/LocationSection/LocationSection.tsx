@@ -1,3 +1,5 @@
+import UnderlinedTitle from "@/components/UnderlinedTitle/UnderlinedTitle";
+
 import style from "./LocationSection.module.css";
 
 const LocationSection = () => {
@@ -11,7 +13,7 @@ const LocationSection = () => {
     <section id="location" className={style.locationSection}>
       <div className={style.container}>
         <div className={style.content}>
-          <h2 className={style.title}>Nossa Localização</h2>
+          <UnderlinedTitle align="left">Nossa Localização</UnderlinedTitle>
           <p className={style.description}>
             Com uma ótima localização, a Clínica Uemura oferece fácil acesso e uma infraestrutura moderna para o seu conforto e bem-estar.
           </p>

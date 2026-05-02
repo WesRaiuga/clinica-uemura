@@ -8,6 +8,7 @@ import FaqSection from '@/views/FaqSection/FaqSection';
 import FloatingButtonArea from '@/views/FloatingButtonArea/FloatingButtonArea';
 import Hero from '@/views/Hero2/Hero';
 import LocationSection from '@/views/LocationSection/LocationSection';
+import ServicesSection from '@/views/ServicesSection/ServicesSection';
 
 const Home = () => {
   const location = useLocation();
@@ -29,6 +30,8 @@ const Home = () => {
       <Hero />
 
       <BubbleSideDivider color="#ffffff" />
+      
+      <ServicesSection />
 
       <ContactSection />
  

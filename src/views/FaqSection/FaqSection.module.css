@@ -5,34 +5,6 @@
   margin-right: auto;
 }
 
-.sectionTitle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-}
-
-/* Sobrescrevendo o h2 do index.css para o FAQ se necessário, 
-   ou apenas garantindo que o título do FAQ seja centralizado */
-.sectionTitle h2 {
-  margin: 0;
-  position: relative;
-  display: inline-block;
-}
-
-.sectionTitle h2::after {
-  content: "";
-  display: block;
-  width: 140%; /* Desejado em telas maiores */
-  max-width: 80vw; /* Limite de segurança para mobile */
-  height: 2px;
-  background-color: var(--brand-primary);
-  margin-top: 10px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 .sectionContent {
   display: flex;
   flex-direction: column;

@@ -1,0 +1,25 @@
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-xl);
+  width: 100%;
+  margin-top: var(--space-2xl);
+}
+
+.cardWrapper {
+  flex: 1 1 300px;
+  max-width: 350px;
+  display: flex; /* Ensures card takes full height of wrapper if using stretch */
+}
+
+@media (max-width: 768px) {
+  .grid {
+    gap: var(--space-lg);
+  }
+  
+  .cardWrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

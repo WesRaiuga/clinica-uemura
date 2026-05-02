@@ -79,14 +79,13 @@
     margin: 100px auto;
     width: 84%;         /* Equivale a 8% de margem de cada lado */
     max-width: 1200px;  /* Limite para telas grandes */
-    padding: 0 15px;
+    padding: 0 0.5rem;    /* Garante margem mínima em telas muito estreitas */
     scroll-margin-top: 100px;
   }
 
   /* O Hero deve permanecer largura total */
   #hero2 {
     margin: 0;
-    padding: 0;
   }
 
   section h2 {
