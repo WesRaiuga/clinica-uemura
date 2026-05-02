@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
@@ -13,6 +13,19 @@ const Menu = () => {
   const toggleMenu = () => setMenuAtivo((value) => !value);
   const closeMenu = () => setMenuAtivo(false);
 
+  const navbarRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (navbarRef.current && !navbarRef.current.contains(e.target as Node)) {
+        closeMenu();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
@@ -21,7 +34,7 @@ const Menu = () => {
   };
 
   return (
-    <div className={style.navbar}>
+    <div className={style.navbar} ref={navbarRef}>
       <header>
         <div className={style.titulo}>
           <Link to="/" state={{ scrollTo: 'hero2' }}>
