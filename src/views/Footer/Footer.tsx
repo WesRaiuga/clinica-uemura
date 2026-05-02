@@ -1,12 +1,12 @@
 import { Link } from 'react-router-dom';
 
 import style from './Footer.module.css';
-import haruoPhoto from '../../assets/img/haruo-uemura.png';
-import leoPhoto from '../../assets/img/leandro-hilario.png';
 import DoctorMiniCard from '../../components/DoctorMiniCard/DoctorMiniCard';
 import LogoContainer from '../../components/Logo/LogoContainer';
 import MenuLinks from '../../components/MenuLinks/MenuLinks';
 import { WHATSAPP_LINK } from '../../utils/constants';
+import { DOCTOR_HARUO } from '../../utils/constants';
+import { DOCTOR_LEANDRO } from '../../utils/constants';
 
 const Footer = () => {
   return (
@@ -20,18 +20,18 @@ const Footer = () => {
           </div>
 
           <DoctorMiniCard
-            photo={haruoPhoto}
-            altText="Foto do Dr. Haruo Uemura"
-            name="Dr. Haruo Uemura"
-            cro="CROSP 000.000"
-            specialization="Endodontia | Cirurgia & Clínica Geral"
+            photo={DOCTOR_HARUO.photo}
+            altText={DOCTOR_HARUO.photoAlt}
+            name={DOCTOR_HARUO.name}
+            cro={DOCTOR_HARUO.cro}
+            specialization={DOCTOR_HARUO.specialization}
           />
           <DoctorMiniCard
-            photo={leoPhoto}
-            altText="Foto do Dr. Leandro Hilário"
-            name="Dr. Leandro Hilário"
-            cro="CROSP 130.372"
-            specialization="Ortodontia | Cirurgia & Clínica Geral"
+            photo={DOCTOR_LEANDRO.photo}
+            altText={DOCTOR_LEANDRO.photoAlt}
+            name={DOCTOR_LEANDRO.name}
+            cro={DOCTOR_LEANDRO.cro}
+            specialization={DOCTOR_LEANDRO.specialization}
           />
         </div>
 
