@@ -1,11 +1,12 @@
-import style from "./Footer.module.css";
-import MenuLinks from "../../components/MenuLinks/MenuLinks";
-import { Link } from "react-router-dom";
-import LogoContainer from "../../components/Logo/LogoContainer";
-import DoctorMiniCard from "../../components/DoctorMiniCard/DoctorMiniCard";
-import { WHATSAPP_LINK } from "../../utils/constants";
-import leoPhoto from "../../assets/img/leandro-hilario.png";
-import haruoPhoto from "../../assets/img/haruo-uemura.png";
+import { Link } from 'react-router-dom';
+
+import style from './Footer.module.css';
+import haruoPhoto from '../../assets/img/haruo-uemura.png';
+import leoPhoto from '../../assets/img/leandro-hilario.png';
+import DoctorMiniCard from '../../components/DoctorMiniCard/DoctorMiniCard';
+import LogoContainer from '../../components/Logo/LogoContainer';
+import MenuLinks from '../../components/MenuLinks/MenuLinks';
+import { WHATSAPP_LINK } from '../../utils/constants';
 
 const Footer = () => {
   return (

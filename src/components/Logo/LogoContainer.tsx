@@ -1,6 +1,7 @@
 import React from 'react';
+
 import style from './LogoContainer.module.css';
-import logotipo from "../../assets/img/logo.png";
+import logotipo from '../../assets/img/logo.png';
 
 const LogoContainer: React.FC = () => {
   return (

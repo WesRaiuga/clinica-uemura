@@ -1,7 +1,7 @@
-// src/layouts/DefaultLayout.tsx
-import { Outlet } from "react-router-dom";
-import Menu from "../views/Menu/Menu";
-import Footer from "../views/Footer/Footer";
+import { Outlet } from 'react-router-dom';
+
+import Footer from '../views/Footer/Footer';
+import Menu from '../views/Menu/Menu';
 
 const DefaultLayout = () => {
   return (

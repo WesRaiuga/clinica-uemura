@@ -1,7 +1,7 @@
 import React from 'react';
+
 import styles from './FloatingButtonArea.module.css';
 import FloatingButton from '../../components/FloatingButton/FloatingButton';
-
 import { WHATSAPP_LINK } from '../../utils/constants';
 
 const FloatingButtonArea: React.FC = () => {

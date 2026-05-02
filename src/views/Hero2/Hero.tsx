@@ -1,7 +1,8 @@
-import style from "./Hero.module.css";
-import logo from "../../assets/img/logo.png";
-import bgImage from "../../assets/img/monte-fuji.gif";
-import { WHATSAPP_LINK } from "@/utils/constants";
+import { WHATSAPP_LINK } from '@/utils/constants';
+
+import style from './Hero.module.css';
+import logo from '../../assets/img/logo.png';
+import bgImage from '../../assets/img/monte-fuji.gif';
 
 const Hero = () => {
   return (

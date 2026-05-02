@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
-import { WHATSAPP_LINK } from "@/utils/constants";
+import { Link } from 'react-router-dom';
+
+import { WHATSAPP_LINK } from '@/utils/constants';
 
 export const FAQ_DATA = [
   {

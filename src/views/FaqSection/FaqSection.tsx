@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect } from "react";
-import style from "./FaqSection.module.css";
-import { FAQ_DATA } from "./FaqData.tsx";
+import { useState, useRef, useEffect } from 'react';
+
+import { FAQ_DATA } from './FaqData.tsx';
+import style from './FaqSection.module.css';
 
 interface FaqItemData {
   question: string;

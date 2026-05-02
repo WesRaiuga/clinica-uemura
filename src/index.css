@@ -3,110 +3,113 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* Reset CSS recomendado */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* --- 1. Base Layer (Reset & Defaults) --- */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-html,
-body,
-#root {
-  height: 100%;
-  font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
-  color: var(--text-color);
-  scroll-behavior: smooth;
-}
+  html,
+  body,
+  #root {
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    scroll-behavior: smooth;
+  }
 
-body {
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-}
+  body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
 
-body,
-#root {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
+  #root {
+    display: flex;
+    flex-direction: column;
+  }
 
-#root > * {
-  flex: 1 0 auto;
-  display: flex;
-  flex-direction: column;
-}
+  #root > * {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+  }
 
-main {
-  flex: 1 0 auto;
-}
+  main {
+    flex: 1 0 auto;
+  }
 
-img,
-picture,
-video,
-canvas,
-svg {
-  display: block;
-  max-width: 100%;
-}
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
 
-input,
-button,
-textarea,
-select {
-  font: inherit;
-}
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
 
-a {
-  color: inherit;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 
-h1,
-h2 {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-weight: 700;
-  color: var(--title-color);
-}
+  h1,
+  h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    color: var(--title-color);
+  }
 
-section {
-  padding: 50px 8% 20px;
-}
-
-section h2 {
-  margin: 20px 0;
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-}
-
-section p {
-  margin: 20px 0;
-  font-size: 16px;
-}
-
-@media (min-width: 800px) {
   section {
-    padding: 50px 10% 20px;
+    padding: 50px 8% 20px;
+  }
+
+  section h2 {
+    margin: 20px 0;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  section p {
+    margin: 20px 0;
+    font-size: 16px;
+  }
+
+  @media (min-width: 800px) {
+    section {
+      padding: 50px 10% 20px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    section {
+      padding: 50px 10% 20px;
+    }
+  }
+
+  @media (min-width: 1600px) {
+    section {
+      padding: 50px 20% 20px;
+    }
   }
 }
 
-@media (min-width: 1200px) {
-  section {
-    padding: 50px 10% 20px;
-  }
-}
-
-@media (min-width: 1600px) {
-  section {
-    padding: 50px 20% 20px;
-  }
-}
-
-/* Shadcn / Tailwind CSS */
-
+/* --- 2. Tailwind Theme Integration (Restoring Original Shadcn-like Variables) --- */
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -214,11 +217,14 @@ section p {
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
+@layer utilities {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-lg);
+    text-align: center;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  .text-balance {
+    text-wrap: balance;
   }
 }

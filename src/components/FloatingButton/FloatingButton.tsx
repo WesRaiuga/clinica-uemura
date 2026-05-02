@@ -1,5 +1,6 @@
-import React from "react";
-import styles from "./FloatingButton.module.css";
+import React from 'react';
+
+import styles from './FloatingButton.module.css';
 
 type FloatingButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   link?: {
@@ -23,13 +24,14 @@ const FloatingButton: React.FC<FloatingButtonProps> = ({ link, bgColor, children
     );
   } else {
     return (
-      <div 
-        className={`${styles.floatButton} ${className ? " " + className : ""}`} 
+      <button 
+        type="button"
+        className={`${styles.floatButton} ${className ? ' ' + className : ''}`} 
         style={{ backgroundColor: bgColor || 'var(--button-color)' }}
         onClick={onClick}
       >
         <span className={styles.content}>{children}</span>
-      </div>
+      </button>
     );
   }
 };

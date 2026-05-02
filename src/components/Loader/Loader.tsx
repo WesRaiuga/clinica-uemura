@@ -1,6 +1,8 @@
 import React from 'react';
+
+import LogoContainer from '@/components/Logo/LogoContainer';
+
 import style from './Loader.module.css';
-import LogoContainer from "../Logo/LogoContainer";
 
 const Loader: React.FC<{ loading: boolean }> = ({loading}) => {
   return (

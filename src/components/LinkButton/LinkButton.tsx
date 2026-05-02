@@ -1,5 +1,6 @@
-import type { AnchorHTMLAttributes, ReactNode } from "react";
-import style from "./LinkButton.module.css";
+import type { AnchorHTMLAttributes, ReactNode } from 'react';
+
+import style from './LinkButton.module.css';
 
 interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   children: ReactNode;

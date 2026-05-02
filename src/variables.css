@@ -1,24 +1,51 @@
 :root {
-  /* Brand Colors */
-  --primary-color: #bc002d;
-  --secondary-color: #f8f9fa; 
+  /* --- Brand Colors --- */
+  --brand-primary: #bc002d;
+  --brand-primary-hover: #990024;
+  --brand-secondary: #f8f9fa;
   
-  /* Backgrounds */
-  --background-color: #ffffff; 
-  --secondary-bg-color: #f8f9fa;
-  --hero-bg-color: #ffffff;
-  --menu-bg-color: #ffffff;
-  --mobile-menu-bg-color: #ffffff;
-  --footer-bg-color: #4e4e4e;
-  --highlight-section: #fdf5f6;
+  /* --- Backgrounds --- */
+  --bg-main: #ffffff;
+  --bg-alt: #f8f9fa;
+  --bg-highlight: #fdf5f6;
+  --bg-footer: #4e4e4e;
+  
+  /* --- Text --- */
+  --text-main: #4a4a4a;
+  --text-title: #1a1a1a;
+  --text-light: #ffffff;
+  --text-muted: #6b7280;
 
-  /* Text Colors */
-  --text-color: #4a4a4a;
-  --text-color-light: #ffffff;
-  --title-color: #1a1a1a;
+  /* --- Spacing Scale (8px base) --- */
+  --space-2xs: 0.25rem; /* 4px */
+  --space-xs: 0.5rem;   /* 8px */
+  --space-sm: 0.75rem;  /* 12px */
+  --space-md: 1rem;    /* 16px */
+  --space-lg: 1.5rem;  /* 24px */
+  --space-xl: 2rem;    /* 32px */
+  --space-2xl: 3rem;   /* 48px */
+  --space-3xl: 4rem;   /* 64px */
 
-  /* UI Elements */
-  --button-color: var(--primary-color);
-  --button-hover-color: #990024;
-  --image-border-color: var(--primary-color);
+  /* --- UI Elements --- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  /* --- Legacy Mapping (for compatibility during migration) --- */
+  --primary-color: var(--brand-primary);
+  --secondary-color: var(--brand-secondary);
+  --background-color: var(--bg-main);
+  --secondary-bg-color: var(--bg-alt);
+  --hero-bg-color: var(--bg-main);
+  --menu-bg-color: var(--bg-main);
+  --mobile-menu-bg-color: var(--bg-main);
+  --footer-bg-color: var(--bg-footer);
+  --highlight-section: var(--bg-highlight);
+  --text-color: var(--text-main);
+  --text-color-light: var(--text-light);
+  --title-color: var(--text-title);
+  --button-color: var(--brand-primary);
+  --button-hover-color: var(--brand-primary-hover);
+  --image-border-color: var(--brand-primary);
 }

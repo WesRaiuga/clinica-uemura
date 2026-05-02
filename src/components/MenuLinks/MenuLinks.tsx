@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
-import LinkButton from "../LinkButton/LinkButton";
-import { WHATSAPP_LINK } from "../../utils/constants";
+import { Link } from 'react-router-dom';
+
+import LinkButton from '@/components/LinkButton/LinkButton';
+import { cn } from '@/utils/cn';
+import { WHATSAPP_LINK } from '@/utils/constants';
 
 interface MenuLinksProps {
   className?: string;
@@ -8,27 +10,25 @@ interface MenuLinksProps {
 
 const MenuLinks = ({ className }: MenuLinksProps) => {
   return (
-    <nav className={`${className ? " " + className : ""}`}>
-      <Link to="/" state={{ scrollTo: "about" }}>
+    <nav className={cn(className)}>
+      <Link to="/" state={{ scrollTo: 'about' }}>
         Sobre
       </Link>
 
-      <Link to="/" state={{ scrollTo: "services" }}>
+      <Link to="/" state={{ scrollTo: 'services' }}>
         Serviços
       </Link>
 
-      <Link to="/" state={{ scrollTo: "contact" }}>
+      <Link to="/" state={{ scrollTo: 'contact' }}>
         Contato
       </Link>
 
-      <Link to="/" state={{ scrollTo: "faq" }}>
+      <Link to="/" state={{ scrollTo: 'faq' }}>
         Dúvidas
       </Link>
 
       <div>
-        <LinkButton href={WHATSAPP_LINK}>
-          Agendar Consulta
-        </LinkButton>
+        <LinkButton href={WHATSAPP_LINK}>Agendar Consulta</LinkButton>
       </div>
     </nav>
   );

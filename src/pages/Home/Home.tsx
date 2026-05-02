@@ -1,21 +1,22 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import FloatingButtonArea from "../../views/FloatingButtonArea/FloatingButtonArea";
-import Hero from "@/views/Hero2/Hero";
-import FaqSection from "@/views/FaqSection/FaqSection";
-import LocationSection from "@/views/LocationSection/LocationSection";
-import BubbleSideDivider from "@/components/dividers/BubbleSideDivider/BubbleSideDivider";
+import { useEffect } from 'react';
+
+import { useLocation } from 'react-router-dom';
+
+import BubbleSideDivider from '@/components/dividers/BubbleSideDivider/BubbleSideDivider';
+import FaqSection from '@/views/FaqSection/FaqSection';
+import FloatingButtonArea from '@/views/FloatingButtonArea/FloatingButtonArea';
+import Hero from '@/views/Hero2/Hero';
+import LocationSection from '@/views/LocationSection/LocationSection';
 
 const Home = () => {
   const location = useLocation();
-  const backgroundColor = "#ffffff";
 
   useEffect(() => {
     const scrollTo = location.state?.scrollTo;
     if (scrollTo) {
       const scrollTarget = document.getElementById(scrollTo);
       if (scrollTarget) {
-        scrollTarget.scrollIntoView({ behavior: "smooth" });
+        scrollTarget.scrollIntoView({ behavior: 'smooth' });
       }
     }
   }, [location]);
@@ -26,7 +27,8 @@ const Home = () => {
 
       <Hero />
 
-      <BubbleSideDivider color={backgroundColor} />
+      {/* Usando valor fixo para garantir estabilidade visual */}
+      <BubbleSideDivider color="#ffffff" />
 
       <LocationSection />
 
