@@ -120,6 +120,7 @@ header {
 .menuLinks a:last-child {
     width: fit-content;
     padding: 10px 20px;
+    margin-top: 5px;
 }
 
 @media(min-width: 800px) {
@@ -142,8 +143,8 @@ header {
         width: auto;
     }
 
-    .menuLinks > div > a {
-        padding: 10px 30px;
+    .menuLinks a:last-child {
+        margin-left: 5px;
     }
 
     .menuLinks a:hover {
