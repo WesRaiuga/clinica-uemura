@@ -1,21 +1,40 @@
 import style from "./Footer.module.css";
-import HomeLinks from "../../components/MenuLinks/MenuLinks";
+import MenuLinks from "../../components/MenuLinks/MenuLinks";
 import { Link } from "react-router-dom";
 import LogoContainer from "../../components/Logo/LogoContainer";
-
+import DoctorMiniCard from "../../components/DoctorMiniCard/DoctorMiniCard";
 import { WHATSAPP_LINK } from "../../utils/constants";
+import leoPhoto from "../../assets/img/leandro-hilario.png";
+import haruoPhoto from "../../assets/img/haruo-uemura.png";
 
 const Footer = () => {
   return (
     <footer>
       <div className={style.firstRow}>
-        <div className={style.logo}>
-          <Link to="/" state={{ scrollTo: "banner" }}>
-            <LogoContainer />
-          </Link>
+        <div className={style.clinicInfo}>
+          <div className={style.logo}>
+            <Link to="/" state={{ scrollTo: "banner" }}>
+              <LogoContainer />
+            </Link>
+          </div>
+
+          <DoctorMiniCard
+            photo={haruoPhoto}
+            altText="Foto do Dr. Haruo Uemura"
+            name="Dr. Haruo Uemura"
+            cro="CROSP 000.000"
+            specialization="Endodontia | Cirurgia & Clínica Geral"
+          />
+          <DoctorMiniCard
+            photo={leoPhoto}
+            altText="Foto do Dr. Leandro Hilário"
+            name="Dr. Leandro Hilário"
+            cro="CROSP 130.372"
+            specialization="Ortodontia | Cirurgia & Clínica Geral"
+          />
         </div>
 
-        <HomeLinks className={style.homeLinks} />
+        <MenuLinks className={style.footerLinks} />
 
         <div className={style.socialIcons}>
           <Link to={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer" title="Whatsapp">
@@ -49,7 +68,7 @@ const Footer = () => {
 
         <div className={style.devInfo}>
           <p>
-            Site desenvolvido por <span> </span>
+            Desenvolvido por: <span> </span>
             <Link to="https://www.linkedin.com/in/wesraiuga/" target="_blank" rel="noopener noreferrer">
               Weslley Aguiar
             </Link>

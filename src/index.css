@@ -66,9 +66,8 @@ a {
 
 h1,
 h2 {
-  font-family: "Cormorant Garamond", serif;
-  font-style: italic;
-  font-weight: 900;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
   color: var(--title-color);
 }
 

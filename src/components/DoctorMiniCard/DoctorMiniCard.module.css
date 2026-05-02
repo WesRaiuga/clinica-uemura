@@ -1,0 +1,24 @@
+.miniCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: 600;
+    gap: 20px;
+}
+
+.miniCard img {
+    max-width: 70px;
+    border-radius: 50%;
+}
+
+.miniCard h1 {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.miniCard p {
+    font-size: 0.9rem;
+    color: #fff;
+    font-weight: 100;
+}
