@@ -21,7 +21,7 @@ footer a{
 .firstRow {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
     margin: 10px 10%;
 }
 
@@ -97,7 +97,7 @@ footer a{
     text-decoration: underline;
 }
 
-@media(min-width: 800px) {
+@media(min-width: 1300px) {
     footer {
         justify-content: space-evenly;
         padding: 10px 20px;
@@ -106,7 +106,7 @@ footer a{
     .firstRow {
         flex-direction: row;
         justify-content: center;
-        gap: 100px;
+        gap: 140px;
         padding: 30px 50px;
     }
 

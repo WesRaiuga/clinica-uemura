@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FloatingButtonArea from "../../views/FloatingButtonArea/FloatingButtonArea";
-import Hero2 from "@/views/Hero2/Hero";
+import Hero from "@/views/Hero2/Hero";
 import FaqSection from "@/views/FaqSection/FaqSection";
+import BubbleSideDivider from "@/components/dividers/BubbleSideDivider/BubbleSideDivider";
 
 const Home = () => {
   const location = useLocation();
+  const backgroundColor = "#ffffff";
 
   useEffect(() => {
     const scrollTo = location.state?.scrollTo;
@@ -21,7 +23,9 @@ const Home = () => {
     <>
       <FloatingButtonArea />
 
-      <Hero2 />
+      <Hero />
+
+      <BubbleSideDivider color={backgroundColor} />
 
       <FaqSection />
     </>

@@ -8,17 +8,17 @@
 }
 
 .miniCard img {
-    max-width: 70px;
+    max-width: 60px;
     border-radius: 50%;
 }
 
 .miniCard h1 {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #fff;
 }
 
 .miniCard p {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     color: #fff;
     font-weight: 100;
 }

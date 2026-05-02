@@ -3,7 +3,7 @@ import logo from "../../assets/img/logo.png";
 import bgImage from "../../assets/img/monte-fuji.gif";
 import { WHATSAPP_LINK } from "@/utils/constants";
 
-const Hero2 = () => {
+const Hero = () => {
   return (
     <section 
       id="hero2" 
@@ -35,4 +35,4 @@ const Hero2 = () => {
   );
 };
 
-export default Hero2;
+export default Hero;
