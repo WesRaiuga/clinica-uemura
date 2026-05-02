@@ -9,8 +9,8 @@ interface MenuLinksProps {
 const MenuLinks = ({ className }: MenuLinksProps) => {
   return (
     <nav className={`${className ? " " + className : ""}`}>
-      <Link to="/" state={{ scrollTo: "about-us" }}>
-        Sobre Nós
+      <Link to="/" state={{ scrollTo: "about" }}>
+        Sobre
       </Link>
 
       <Link to="/" state={{ scrollTo: "services" }}>
@@ -21,7 +21,7 @@ const MenuLinks = ({ className }: MenuLinksProps) => {
         Contato
       </Link>
 
-      <Link to="/" state={{ scrollTo: "questions" }}>
+      <Link to="/" state={{ scrollTo: "faq" }}>
         Dúvidas
       </Link>
 

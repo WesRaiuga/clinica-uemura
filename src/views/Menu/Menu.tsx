@@ -12,7 +12,7 @@ const Menu: React.FC = () => {
     <div className={style.navbar}>
       <header>
         <div className={style.titulo}>
-          <Link to="/" state={{ scrollTo: "banner" }}>
+          <Link to="/" state={{ scrollTo: "hero2" }}>
             <LogoContainer />
           </Link>
         </div>
