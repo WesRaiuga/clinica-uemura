@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import FloatingButtonArea from "../../views/FloatingButtonArea/FloatingButtonArea";
 import Hero from "@/views/Hero2/Hero";
 import FaqSection from "@/views/FaqSection/FaqSection";
+import LocationSection from "@/views/LocationSection/LocationSection";
 import BubbleSideDivider from "@/components/dividers/BubbleSideDivider/BubbleSideDivider";
 
 const Home = () => {
@@ -26,6 +27,8 @@ const Home = () => {
       <Hero />
 
       <BubbleSideDivider color={backgroundColor} />
+
+      <LocationSection />
 
       <FaqSection />
     </>
