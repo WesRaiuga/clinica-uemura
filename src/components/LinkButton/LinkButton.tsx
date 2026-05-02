@@ -7,9 +7,9 @@ interface LinkButtonProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;
 }
 
-const LinkButton = ({ children, href }: LinkButtonProps) => {
+const LinkButton = ({ children, href, ...rest }: LinkButtonProps) => {
   return (
-    <a className={style.linkButton} href={href} target="_blank" rel="noopener noreferrer">
+    <a className={style.linkButton} href={href} target="_blank" rel="noopener noreferrer" {...rest}>
       {children}
     </a>
   );

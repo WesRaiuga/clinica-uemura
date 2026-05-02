@@ -11,6 +11,7 @@ import style from './Menu.module.css';
 const Menu = () => {
   const [menuAtivo, setMenuAtivo] = useState(false);
   const toggleMenu = () => setMenuAtivo((value) => !value);
+  const closeMenu = () => setMenuAtivo(false);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -47,6 +48,7 @@ const Menu = () => {
 
       <MenuLinks
         className={cn(style.menuLinks, style.mobile, menuAtivo && style.ativo)}
+        onLinkClick={closeMenu}
       />
     </div>
   );
