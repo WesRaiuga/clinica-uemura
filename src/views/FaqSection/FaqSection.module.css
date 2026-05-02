@@ -1,23 +1,49 @@
-.sectionContent {
-  overflow: hidden;
-  background-color: var(--hero-bg-color);
-  width: 110%;
-  position: relative;
-  right: 5%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.faqSection {
+  /* Herda margin e padding do index.css */
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .sectionTitle {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 50px;
+}
+
+/* Sobrescrevendo o h2 do index.css para o FAQ se necessário, 
+   ou apenas garantindo que o título do FAQ seja centralizado */
+.sectionTitle h2 {
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionTitle h2::after {
+  content: "";
+  display: block;
+  width: 140%; /* Desejado em telas maiores */
+  max-width: 80vw; /* Limite de segurança para mobile */
+  height: 2px;
+  background-color: var(--brand-primary);
+  margin-top: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.sectionContent {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .questionContainer {
   background-color: #F1F4F8;
-  border-radius: 15px;
+  border-radius: 16px;
+  transition: background-color 0.3s ease;
 }
 
 .questionContainer:hover {
@@ -27,21 +53,23 @@
 .question {
   cursor: pointer;
   border: none;
-  font-size: 14pt;
-  font-weight: bolder;
+  font-size: 1.1rem;
+  font-weight: 700;
   text-align: left;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   width: 100%;
-  padding: 20px 15px;
+  padding: 20px;
+  background: none;
+  color: var(--text-title);
 }
 
 .questionActive {
-  color: var(--primary-color);
+  color: var(--brand-primary);
   background-color: #e8eaee;
-  border-radius: 15px 15px 0 0;
+  border-radius: 16px 16px 0 0;
 }
 
 .icon {
@@ -88,29 +116,30 @@
 .answer {
   height: 0;
   opacity: 0;
-  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
-  border-radius: 0 0 15px 15px;
+  transition: height 0.3s ease-in-out, opacity 0.3s ease-in-out;
   overflow: hidden;
 }
 
 .answerOpen {
   opacity: 1;
   background-color: #e8eaee;
+  border-radius: 0 0 16px 16px;
 }
 
 .answerInner {
   min-height: 0;
-  padding: 0 20px 15px;
+  padding: 0 20px 20px;
+  color: var(--text-main);
+  line-height: 1.6;
 }
 
-.answer p {
-  margin: 5px 0;
+.answerInner p {
+  margin: 8px 0;
 }
 
 @media (min-width: 1000px) {
   .sectionContent {
-    margin: 0 10%;
-    width: auto;
-    position: initial;
+    max-width: 900px;
+    margin: 0 auto;
   }
 }

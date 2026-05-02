@@ -74,37 +74,48 @@
     color: var(--title-color);
   }
 
-  section {
-    padding: 50px 8% 20px;
+  /* Aplicamos a margem auto e largura controlada para garantir centralização */
+  section:not(#hero2) {
+    margin: 100px auto;
+    width: 84%;         /* Equivale a 8% de margem de cada lado */
+    max-width: 1200px;  /* Limite para telas grandes */
+    padding: 0 15px;
+    scroll-margin-top: 100px;
+  }
+
+  /* O Hero deve permanecer largura total */
+  #hero2 {
+    margin: 0;
+    padding: 0;
   }
 
   section h2 {
     margin: 20px 0;
-    font-size: 2.5rem;
-    font-weight: 600;
+    font-size: 2.2rem;
+    font-weight: 700;
     text-align: center;
-  }
-
-  section p {
-    margin: 20px 0;
-    font-size: 16px;
+    color: var(--text-title);
   }
 
   @media (min-width: 800px) {
-    section {
-      padding: 50px 10% 20px;
+    section:not(#hero2) {
+      margin: 120px auto;
+      width: 80%;        /* 10% de margem de cada lado */
+      max-width: 1400px;
+      scroll-margin-top: 120px;
     }
-  }
-
-  @media (min-width: 1200px) {
-    section {
-      padding: 50px 10% 20px;
+    
+    section h2 {
+      font-size: 2.5rem;
     }
   }
 
   @media (min-width: 1600px) {
-    section {
-      padding: 50px 20% 20px;
+    section:not(#hero2) {
+      margin: 150px auto;
+      width: 70%;        /* 15% de margem de cada lado */
+      max-width: 1600px;
+      scroll-margin-top: 150px;
     }
   }
 }
