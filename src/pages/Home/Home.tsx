@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import BubbleSideDivider from '@/components/dividers/BubbleSideDivider/BubbleSideDivider';
+import AboutSection from '@/views/AboutClinicSection/AboutClinicSection';
 import ContactSection from '@/views/ContactSection/ContactSection';
 import FaqSection from '@/views/FaqSection/FaqSection';
 import FloatingButtonArea from '@/views/FloatingButtonArea/FloatingButtonArea';
@@ -30,6 +31,8 @@ const Home = () => {
       <Hero />
 
       <BubbleSideDivider color="#ffffff" />
+
+      <AboutSection />
       
       <ServicesSection />
 

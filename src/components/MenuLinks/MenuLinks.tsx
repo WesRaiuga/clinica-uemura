@@ -12,8 +12,8 @@ interface MenuLinksProps {
 const MenuLinks = ({ className, onLinkClick }: MenuLinksProps) => {
   return (
     <nav className={cn(className)}>
-      <Link to="/" state={{ scrollTo: 'about' }} onClick={onLinkClick}>
-        Sobre
+      <Link to="/" state={{ scrollTo: 'about-clinic' }} onClick={onLinkClick}>
+        Conheça a clínica
       </Link>
 
       <Link to="/" state={{ scrollTo: 'services' }} onClick={onLinkClick}>

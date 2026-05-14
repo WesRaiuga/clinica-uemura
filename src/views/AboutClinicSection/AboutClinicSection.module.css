@@ -1,0 +1,163 @@
+#about {
+  scroll-margin-top: 60px;
+}
+
+.aboutSection {
+  padding: var(--space-2xl) var(--space-md);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Clinic Introduction */
+.clinicIntro {
+  margin-bottom: var(--space-3xl);
+}
+
+.clinicContent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+  margin-top: var(--space-xl);
+  align-items: stretch;
+}
+
+/* Clinic Image */
+.clinicImageWrapper {
+  width: 100%;
+  order: -1;
+  animation: fadeInDown 0.8s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.clinicGallery {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Clinic Info */
+.clinicInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.clinicText {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  margin: 0;
+}
+
+/* Divider */
+.divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--brand-primary),
+    transparent
+  );
+  margin: var(--space-3xl) 0;
+  animation: expandWidth 0.8s ease-out 0.5s both;
+  transform-origin: center;
+}
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* Tablet */
+@media (min-width: 768px) {
+  .aboutSection {
+    padding: var(--space-3xl) var(--space-lg);
+  }
+
+  .clinicContent {
+    flex-direction: row;
+    align-items: center;
+    gap: var(--space-2xl);
+  }
+
+  .clinicImageWrapper {
+    flex: 0 0 45%;
+    order: 0;
+  }
+
+  .clinicGallery {
+    aspect-ratio: 1;
+  }
+
+  .clinicInfo {
+    flex: 1;
+  }
+
+
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .aboutSection {
+    padding: 4rem var(--space-2xl);
+  }
+
+  .clinicContent {
+    gap: var(--space-3xl);
+  }
+
+  .clinicImageWrapper {
+    flex: 0 0 50%;
+  }
+
+  .clinicGallery {
+    min-height: 400px;
+  }
+
+  .clinicText {
+    font-size: 1.0625rem;
+  }
+
+}
+
+/* Extra Large */
+@media (min-width: 1440px) {
+  .aboutSection {
+    padding: 5rem var(--space-2xl);
+  }
+
+  .clinicImageWrapper {
+    flex: 0 0 45%;
+  }
+
+  .clinicGallery {
+    min-height: 450px;
+  }
+}
