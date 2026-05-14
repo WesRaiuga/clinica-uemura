@@ -6,7 +6,7 @@ header {
     position: relative;
     width: 100%;
     box-sizing: border-box;
-    z-index: 2;
+    z-index: 50;
     background-color: var(--menu-bg-color);
     color: var(--text-color);
     box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.21);
@@ -16,7 +16,7 @@ header {
     position: fixed;
 	top: 0;
 	width: 100%;
-    z-index: 2;
+    z-index: 50;
 }
 
 .navbar a{
@@ -99,7 +99,7 @@ header {
     position: absolute;
     left: 0;
     right: 0;
-    z-index: 1;
+    z-index: 49;
     transform: translateY(-101%);
     transition: 0.5s;
     background-color: var(--mobile-menu-bg-color);
