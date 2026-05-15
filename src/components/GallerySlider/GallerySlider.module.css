@@ -7,6 +7,7 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   background-color: var(--bg-alt);
   user-select: none;
+  transform: translateZ(0); /* Força o WebKit a respeitar o overflow: hidden no border-radius */
 }
 
 .sliderContainer {
@@ -30,7 +31,7 @@
 .slide {
   position: absolute;
   top: 0;
-  width: 100%;
+  width: calc(100% + 1px); /* Compensa o arredondamento fracionário de pixels no mobile */
   height: 100%;
   display: flex;
   align-items: center;

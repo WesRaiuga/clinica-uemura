@@ -11,24 +11,28 @@ export interface DoctorData {
   quote: string;
   photo: string;
   photoAlt: string;
+  /** Se true, inverte a ordem imagem/conteúdo no desktop */
+  reversed: boolean;
 }
 
 export const DOCTOR_HARUO: DoctorData = {
   name: 'Dr. Haruo Uemura',
   cro: 'CROSP 000.000',
   specialization: 'Endodontia | Cirurgia & Clínica Geral',
-  bio: 'Fundador da Clínica Uemura, o Dr. Haruo dedica mais de 30 anos ao cuidado da saúde bucal com excelência técnica e humanidade. Especialista em endodontia, transformou incontáveis sorrisos com precisão e comprometimento.',
-  quote: 'A saúde começa pela boca — cuidar bem dela é cuidar de toda a pessoa.',
+  bio: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam facere sunt minus dolore, eaque atque aliquam, suscipit officiis placeat vel est enim iste molestiae unde ipsam quaerat porro nesciunt rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam facere sunt minus dolore, eaque atque aliquam, suscipit officiis placeat vel est enim iste molestiae unde ipsam quaerat porro nesciunt rerum.',
+  quote: 'Devolver o sorriso a um paciente é, para mim, a maior recompensa da odontologia.',
   photo: haruoPhoto,
   photoAlt: 'Foto do Dr. Haruo Uemura',
+  reversed: false,
 };
 
 export const DOCTOR_LEANDRO: DoctorData = {
   name: 'Dr. Leandro Hilário',
   cro: 'CROSP 130.372',
   specialization: 'Ortodontia | Cirurgia & Clínica Geral',
-  bio: 'Especialista em ortodontia moderna, o Dr. Leandro traz inovação e sensibilidade ao atendimento. Comprometido com resultados estéticos e funcionais, utiliza as técnicas mais avançadas para construir sorrisos harmoniosos.',
-  quote: 'Um sorriso bem alinhado não é apenas estética — é autoconfiança em movimento.',
+  bio: 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam facere sunt minus dolore, eaque atque aliquam, suscipit officiis placeat vel est enim iste molestiae unde ipsam quaerat porro nesciunt rerum.Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam facere sunt minus dolore, eaque atque aliquam, suscipit officiis placeat vel est enim iste molestiae unde ipsam quaerat porro nesciunt rerum.',
+  quote: 'Cada sorriso que alinhamos hoje é uma confiança que se fortalece para sempre.',
   photo: leoPhoto,
   photoAlt: 'Foto do Dr. Leandro Hilário',
+  reversed: true,
 };

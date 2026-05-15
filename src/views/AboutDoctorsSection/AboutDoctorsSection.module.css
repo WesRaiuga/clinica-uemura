@@ -1,0 +1,9 @@
+.aboutDoctorsSection {
+  max-width: 1400px;
+}
+
+.doctorsList {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem; /* large gap so the overlapping quote doesn't collide with the next card */
+}

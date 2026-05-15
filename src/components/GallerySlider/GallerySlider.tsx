@@ -178,7 +178,11 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
             <div 
               key={item.originalIndex} 
               className={style.slide}
-              style={{ left: getLeft(idx) }}
+              style={{ 
+                left: getLeft(idx),
+                zIndex: idx === 0 ? 2 : 1
+              }}
+              aria-hidden={idx !== 0 ? 'true' : 'false'}
             >
               <img src={item.img} alt={`Galeria ${item.originalIndex + 1}`} draggable="false" />
             </div>

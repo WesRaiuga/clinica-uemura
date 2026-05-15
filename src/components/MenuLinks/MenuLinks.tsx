@@ -13,7 +13,11 @@ const MenuLinks = ({ className, onLinkClick }: MenuLinksProps) => {
   return (
     <nav className={cn(className)}>
       <Link to="/" state={{ scrollTo: 'about-clinic' }} onClick={onLinkClick}>
-        Conheça a clínica
+        Conheça a Clínica
+      </Link>
+
+      <Link to="/" state={{ scrollTo: 'about-doctors' }} onClick={onLinkClick}>
+        Sobre Nós
       </Link>
 
       <Link to="/" state={{ scrollTo: 'services' }} onClick={onLinkClick}>

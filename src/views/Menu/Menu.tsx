@@ -37,7 +37,7 @@ const Menu = () => {
     <div className={style.navbar} ref={navbarRef}>
       <header>
         <div className={style.titulo}>
-          <Link to="/" state={{ scrollTo: 'hero2' }}>
+          <Link to="/" state={{ scrollTo: 'hero' }}>
             <LogoContainer />
           </Link>
         </div>

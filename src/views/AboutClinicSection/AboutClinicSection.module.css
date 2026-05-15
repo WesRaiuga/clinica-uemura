@@ -1,16 +1,5 @@
-#about {
-  scroll-margin-top: 60px;
-}
-
-.aboutSection {
-  padding: var(--space-2xl) var(--space-md);
+.aboutClinicSection {
   max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Clinic Introduction */
-.clinicIntro {
-  margin-bottom: var(--space-3xl);
 }
 
 .clinicContent {
@@ -71,36 +60,11 @@
   margin: 0;
 }
 
-/* Divider */
-.divider {
-  height: 2px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    var(--brand-primary),
-    transparent
-  );
-  margin: var(--space-3xl) 0;
-  animation: expandWidth 0.8s ease-out 0.5s both;
-  transform-origin: center;
-}
 
-@keyframes expandWidth {
-  from {
-    transform: scaleX(0);
-  }
-  to {
-    transform: scaleX(1);
-  }
-}
 
 
 /* Tablet */
 @media (min-width: 768px) {
-  .aboutSection {
-    padding: var(--space-3xl) var(--space-lg);
-  }
-
   .clinicContent {
     flex-direction: row;
     align-items: center;
@@ -125,10 +89,6 @@
 
 /* Desktop */
 @media (min-width: 1024px) {
-  .aboutSection {
-    padding: 4rem var(--space-2xl);
-  }
-
   .clinicContent {
     gap: var(--space-3xl);
   }
@@ -149,10 +109,6 @@
 
 /* Extra Large */
 @media (min-width: 1440px) {
-  .aboutSection {
-    padding: 5rem var(--space-2xl);
-  }
-
   .clinicImageWrapper {
     flex: 0 0 45%;
   }

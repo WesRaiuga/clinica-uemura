@@ -7,7 +7,7 @@ import bgImage from '../../assets/img/monte-fuji.gif';
 const Hero = () => {
   return (
     <section 
-      id="hero2" 
+      id="hero"
       className={style.heroContainer}
       style={{ backgroundImage: `url(${bgImage})` }}
     >

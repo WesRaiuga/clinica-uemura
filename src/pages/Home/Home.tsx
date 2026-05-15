@@ -3,11 +3,13 @@ import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
 import BubbleSideDivider from '@/components/dividers/BubbleSideDivider/BubbleSideDivider';
-import AboutSection from '@/views/AboutClinicSection/AboutClinicSection';
+import GradientDivider from '@/components/dividers/GradientDivider/GradientDivider';
+import AboutClinicSection from '@/views/AboutClinicSection/AboutClinicSection';
+import AboutDoctorsSection from '@/views/AboutDoctorsSection/AboutDoctorsSection';
 import ContactSection from '@/views/ContactSection/ContactSection';
 import FaqSection from '@/views/FaqSection/FaqSection';
 import FloatingButtonArea from '@/views/FloatingButtonArea/FloatingButtonArea';
-import Hero from '@/views/Hero2/Hero';
+import Hero from '@/views/Hero/Hero';
 import LocationSection from '@/views/LocationSection/LocationSection';
 import ServicesSection from '@/views/ServicesSection/ServicesSection';
 
@@ -32,7 +34,11 @@ const Home = () => {
 
       <BubbleSideDivider color="#ffffff" />
 
-      <AboutSection />
+      <AboutClinicSection />
+
+      <AboutDoctorsSection />
+
+      <GradientDivider />
       
       <ServicesSection />
 

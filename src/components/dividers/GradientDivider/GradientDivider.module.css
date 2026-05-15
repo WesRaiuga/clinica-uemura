@@ -1,0 +1,21 @@
+.divider {
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--brand-primary),
+    transparent
+  );
+  margin: 10px 5%;
+  animation: expandWidth 0.8s ease-out 0.5s both;
+  transform-origin: center;
+}
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}

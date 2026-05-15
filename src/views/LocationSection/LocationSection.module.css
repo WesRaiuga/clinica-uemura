@@ -2,7 +2,6 @@
   /* Margem auto e largura maior para o fundo ser mais largo que as outras seções */
   margin: 100px auto !important;
   width: 92% !important; /* Equivale a 4% de margem de cada lado */
-  scroll-margin-top: 100px;
 
   /* Padding para alinhar o texto internamente com as seções de largura 84% + 1rem */
   /* (92% - 84%) / 2 = 4% + 1rem base do global */
@@ -107,7 +106,6 @@
   .locationSection {
     width: 88% !important; /* Equivale a 6% de margem cada lado (Vs 10% padrão) */
     margin: 120px auto !important;
-    scroll-margin-top: 120px;
     /* Alinhamento desktop: (88% - 80%) / 2 = 4% + 1rem base */
     padding: 0 calc(4% + 0.5rem) !important;
     max-width: 1600px !important;
