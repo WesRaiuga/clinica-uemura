@@ -19,8 +19,24 @@
   display: block;
   width: 100%;
   height: 2px;
-  background-color: var(--brand-primary);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--brand-primary),
+    transparent
+  );
   margin-top: 10px;
+  animation: expandWidth 0.8s ease-out 0.5s both;
+  transform-origin: center;
+}
+
+@keyframes expandWidth {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* Desktop Styles */
