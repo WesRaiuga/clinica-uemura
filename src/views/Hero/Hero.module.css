@@ -35,7 +35,6 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: 600px;
-  animation: slideUpFade 1s ease-out forwards;
 }
 
 .logo {
@@ -126,17 +125,6 @@
 }
 
 /* Animations */
-@keyframes slideUpFade {
-  from {
-    opacity: 0;
-    transform: translateY(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
