@@ -16,7 +16,7 @@ function App() {
       <div
         style={{
           opacity: shouldShowContent ? 1 : 0,
-          transition: 'opacity 1.5s ease',
+          transition: 'opacity 0.5s ease',
         }}
       >
         <Routes>
