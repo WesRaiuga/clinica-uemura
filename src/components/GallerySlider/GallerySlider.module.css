@@ -129,3 +129,98 @@
     right: 20px;
   }
 }
+
+/* ─── Lightbox / Fullscreen Modal ────────────────────────────────────────── */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.88);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+  animation: lightboxFadeIn 0.25s ease;
+  backdrop-filter: blur(6px);
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.lightboxSlider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  max-height: 90vh;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  user-select: none;
+  transform: translateZ(0);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+  animation: lightboxScaleIn 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes lightboxScaleIn {
+  from { transform: scale(0.92); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.lightboxImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  background-color: #000;
+}
+
+.lightboxClose {
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 1001;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  backdrop-filter: blur(8px);
+}
+
+.lightboxClose:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1);
+}
+
+.lightboxClose:active {
+  transform: scale(0.95);
+}
+
+/* On smaller screens keep the lightbox responsive */
+@media (max-width: 600px) {
+  .lightboxOverlay {
+    padding: var(--space-md);
+  }
+
+  .lightboxSlider {
+    aspect-ratio: 4 / 3;
+    max-height: 80vh;
+  }
+
+  .lightboxClose {
+    top: 10px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}

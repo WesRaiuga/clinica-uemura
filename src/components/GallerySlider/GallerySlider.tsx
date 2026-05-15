@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 
 import { cn } from '@/utils/cn';
 
@@ -28,7 +29,34 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
   const [startX, setStartX] = useState(0);
   const [currentTranslate, setCurrentTranslate] = useState(0);
   const [slideDirection, setSlideDirection] = useState<1 | -1>(1);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const sliderRef = useRef<HTMLDivElement>(null);
+  const lightboxRef = useRef<HTMLDivElement>(null);
+
+  const openLightbox = useCallback(() => {
+    setIsLightboxOpen(true);
+    document.body.style.overflow = 'hidden';
+  }, []);
+
+  const closeLightbox = useCallback(() => {
+    setIsLightboxOpen(false);
+    document.body.style.overflow = '';
+  }, []);
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    if (!isLightboxOpen) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox();
+    };
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  }, [isLightboxOpen, closeLightbox]);
+
+  // Clean up body overflow on unmount
+  useEffect(() => {
+    return () => { document.body.style.overflow = ''; };
+  }, []);
 
   const goToNext = useCallback(() => {
     if (imagesCount <= 1 || movement !== 'idle' || isDragging) return;
@@ -86,10 +114,10 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
 
   // Auto Play
   useEffect(() => {
-    if (isDragging || imagesCount <= 1) return;
+    if (isDragging || imagesCount <= 1 || isLightboxOpen) return;
     const timer = setInterval(goToNext, autoPlayInterval);
     return () => clearInterval(timer);
-  }, [goToNext, autoPlayInterval, isDragging, items, imagesCount]); // items changing resets timer
+  }, [goToNext, autoPlayInterval, isDragging, items, imagesCount, isLightboxOpen]); // items changing resets timer
 
   // Infinite Loop transition handling
   const handleTransitionEnd = () => {
@@ -154,6 +182,7 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
   const currentTranslatePercent = movement === 'next' ? -100 : movement === 'prev' ? 100 : 0;
 
   return (
+    <>
     <div className={cn(style.galleryWrapper, className)}>
       <div
         className={style.sliderContainer}
@@ -184,7 +213,14 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
               }}
               aria-hidden={idx !== 0 ? 'true' : 'false'}
             >
-              <img src={item.img} alt={`Galeria ${item.originalIndex + 1}`} draggable="false" />
+              <img
+                src={item.img}
+                alt={`Galeria ${item.originalIndex + 1}`}
+                draggable="false"
+                className={idx === 0 ? style.clickableImage : undefined}
+                onClick={idx === 0 ? openLightbox : undefined}
+                style={idx === 0 ? { cursor: 'zoom-in', pointerEvents: 'auto' } : undefined}
+              />
             </div>
           ))}
         </div>
@@ -230,6 +266,101 @@ const GallerySlider: React.FC<GallerySliderProps> = ({
         </>
       )}
     </div>
+
+    {isLightboxOpen && createPortal(
+      <div
+        className={style.lightboxOverlay}
+        role="dialog"
+        aria-modal="true"
+        aria-label="Imagem em tela cheia"
+        onClick={closeLightbox}
+      >
+        <button
+          type="button"
+          className={style.lightboxClose}
+          onClick={(e) => { e.stopPropagation(); closeLightbox(); }}
+          aria-label="Fechar"
+        >
+          <i className="fa-solid fa-xmark" />
+        </button>
+
+        <div
+          className={style.lightboxSlider}
+          ref={lightboxRef}
+          onClick={(e) => e.stopPropagation()}
+          role="presentation"
+          onTouchStart={handleDragStart}
+          onTouchMove={handleDragMove}
+          onTouchEnd={handleDragEnd}
+          onMouseDown={handleDragStart}
+          onMouseMove={handleDragMove}
+          onMouseUp={handleDragEnd}
+          onMouseLeave={handleDragEnd}
+        >
+          <div
+            className={cn(style.slides, isTransitioning && style.animate)}
+            style={{
+              transform: `translateX(calc(${currentTranslatePercent}% + ${currentTranslate}px))`,
+            }}
+          >
+            {items.map((item, idx) => (
+              <div
+                key={item.originalIndex}
+                className={style.slide}
+                style={{
+                  left: getLeft(idx),
+                  zIndex: idx === 0 ? 2 : 1,
+                }}
+                aria-hidden={idx !== 0 ? 'true' : 'false'}
+              >
+                <img
+                  src={item.img}
+                  alt={`Galeria ${item.originalIndex + 1}`}
+                  draggable="false"
+                  className={style.lightboxImage}
+                />
+              </div>
+            ))}
+          </div>
+
+          {imagesCount > 1 && (
+            <>
+              <button
+                type="button"
+                className={cn(style.navBtn, style.prevBtn)}
+                onClick={(e) => { e.stopPropagation(); goToPrev(); }}
+                aria-label="Imagem Anterior"
+              >
+                <i className="fa-solid fa-chevron-left" />
+              </button>
+
+              <button
+                type="button"
+                className={cn(style.navBtn, style.nextBtn)}
+                onClick={(e) => { e.stopPropagation(); goToNext(); }}
+                aria-label="Próxima Imagem"
+              >
+                <i className="fa-solid fa-chevron-right" />
+              </button>
+
+              <div className={style.indicators}>
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    className={cn(style.indicator, items[0].originalIndex === idx && style.active)}
+                    onClick={(e) => { e.stopPropagation(); goToIndex(idx); }}
+                    aria-label={`Ir para a imagem ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+        </div>
+      </div>,
+      document.body
+    )}
+    </>
   );
 };
 
